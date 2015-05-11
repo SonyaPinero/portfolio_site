@@ -5,11 +5,12 @@
 }
 
 body {
-	background-color: #303030;
+	/*background-color: #303030;*/
+  background-color: white;
 }
 
 
-header {
+#top {
   margin-top: 75px;
   margin-left: 75px;
 	position: relative;
@@ -26,6 +27,7 @@ header {
 #sonya-img {
     margin-top: -65px;
 		margin-right: 10px;
+    position: absolute;
 		float: right;
     width: 200px;
     height: 200px;
@@ -38,7 +40,8 @@ header {
 }    
 
 #nav {
-	margin-left: 75px;
+    z-index: -1;
+	   margin-left: 75px;
 		background: -webkit-linear-gradient(#6F22B6, #303030); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#6F22B6, #303030); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#6F22B6, #303030); /* For Firefox 3.6 to 15 */
@@ -49,10 +52,12 @@ header {
 }
 
 li {
+  z-index: -1;
  list-style-type: none;
   padding: 10px;
  }
 
  a {
+  z-index: -1;
  	font-size: 25px;
  }
