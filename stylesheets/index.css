@@ -14,7 +14,7 @@ body {
   margin-top: 75px;
   margin-left: 75px;
 	position: relative;
-	z-index: -1;
+	z-index: 1000;
 	height: 125px;
   background: -webkit-linear-gradient(right, #303030, #6F22B6
   	); /* For Safari 5.1 to 6.0 */
@@ -49,6 +49,8 @@ body {
     width: 125px;
     height: 1000px;
     text-align: center;
+    display: inline-block;
+
 }
 
 li {
@@ -60,4 +62,10 @@ li {
  a {
   z-index: -1;
  	font-size: 25px;
+ }
+
+ #container {
+  height: 1000px;
+  width: 1077px;
+  float: right;
  }
