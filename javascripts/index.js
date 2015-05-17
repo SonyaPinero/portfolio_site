@@ -8,4 +8,12 @@ $(function() {
         marginLeft: "+=1000px",
     }, 3000 );
 
+			// $("#top").css(width: '0px');
+    	
+   //  	$("#top").animate({ 
+   //      width: "+=1000px",
+   //  }, 3000 );
+    	
+    	// $("#nav")
+
 })

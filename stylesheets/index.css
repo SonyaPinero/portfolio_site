@@ -25,8 +25,10 @@ body {
 
 
 #sonya-img {
-    margin-top: -65px;
+    z-index: 1000;
+    margin-top: -175px;
 		margin-right: 10px;
+    margin-left: 75px;
     position: absolute;
 		float: right;
     width: 200px;
