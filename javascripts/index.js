@@ -4,16 +4,12 @@ $(function() {
 
 			$("#sonya-img").fadeIn('slow');
 
-    	$("#sonya-img").delay(2000).animate({ 
+    	$("#sonya-img").delay(3500).animate({ 
         marginLeft: "+=1000px",
     }, 3000 );
 
-			// $("#top").css(width: '0px');
-    	
-   //  	$("#top").animate({ 
-   //      width: "+=1000px",
-   //  }, 3000 );
-    	
-    	// $("#nav")
+	$("#top").animate({height: 125, width: 1200}, 4000);
+	$("#nav").animate({height: 1200, width: 125}, 4000);
+
 
 })
