@@ -5,8 +5,8 @@
 }
 
 body {
-	/*background-color: #303030;*/
-  background-color: white;
+	background-color: #303030;
+  /*background-color: white;*/
 }
 
 
@@ -57,18 +57,31 @@ body {
 }
 
 li {
-  z-index: -1;
+  margin-top: 50px;
  list-style-type: none;
   padding: 10px;
  }
 
  a {
+  color: white;
   z-index: -1;
  	font-size: 25px;
+  text-decoration: none;
+ }
+
+  a:hover {
+  color: #303030;
+  text-decoration: underline;
  }
 
  #container {
+  background-color: white;
   height: 1200px;
   width: 1077px;
   float: right;
+ }
+
+ #pdf {
+   width: 1077px;
+   height: 1200px;
  }
