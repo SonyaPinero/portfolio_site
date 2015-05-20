@@ -1,0 +1,1 @@
+My simple and quick attempt at an one page site with pure jQuery and a liberal usage of display:none. 
