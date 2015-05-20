@@ -34,10 +34,4 @@ $(function() {
 		}
 	});
 
-
-	// $("#resume").click(function() {
-	// 	$("#pdf").removeClass("invisible");
-	// });
-
-
 })
