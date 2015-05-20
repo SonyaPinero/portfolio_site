@@ -62,16 +62,17 @@ li {
   padding: 10px;
  }
 
- a {
+span {
   color: white;
   z-index: -1;
  	font-size: 25px;
   text-decoration: none;
  }
 
-  a:hover {
+span:hover {
   color: #303030;
   text-decoration: underline;
+  cursor: pointer;
  }
 
  #container {
@@ -84,4 +85,20 @@ li {
  #pdf {
    width: 1077px;
    height: 1200px;
+ }
+
+ #projects {
+  margin-top: 50px;
+  font-size: 25px;
+  text-align: center;
+ }
+
+ #contact-info{
+  margin-top: 50px;
+  font-size: 25px;
+  text-align: center;
+ }
+
+ .invisible {
+  display: none;
  }
