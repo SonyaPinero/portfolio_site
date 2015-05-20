@@ -82,6 +82,20 @@ span:hover {
   float: right;
  }
 
+ #default {
+   margin-top: 50px;
+  font-size: 25px;
+  text-align: center;
+ }
+
+ #sonya-about {
+  text-indent: 30px;
+  text-align: justify;
+  margin: 50px;
+  font-size: 25px;
+ }
+
+
  #pdf {
    width: 1077px;
    height: 1200px;
@@ -93,11 +107,38 @@ span:hover {
   text-align: center;
  }
 
+ #projects img {
+  padding: 10px;
+  border: 1px solid;
+  margin-top: 25px;
+  width: 250px;
+  height: 325px;
+ }
+
+ #projects h3 {
+  margin-top: 15px;
+ }
+
+#projects p {
+  margin-top: 15px;
+ }
+
+ #entitycity {
+  margin-top: 50px;
+ }
+
  #contact-info{
   margin-top: 50px;
   font-size: 25px;
   text-align: center;
  }
+
+
+#contact-info img {
+  width: 3%;
+ height: 3%;
+}
+
 
  .invisible {
   display: none;
