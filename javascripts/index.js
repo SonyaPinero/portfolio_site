@@ -18,6 +18,10 @@ $(function() {
 	$("span").click(function() {
 		if ($(this).attr("id") == "resume") {
 			elements.addClass("invisible");
+			var div = $("<div />", { "id":"loading"}).append($("<h1>Loading...</h1>"))
+			div.css({"text-align": "center", "margin-top": "25px"});
+			$("#container").prepend(div)
+			div.delay(1000).fadeOut('fast');
 			$("#pdf").removeClass("invisible");
 		} else if ($(this).attr("id") == "contact") {
 			elements.addClass("invisible");
