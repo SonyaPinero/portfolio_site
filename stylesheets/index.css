@@ -9,6 +9,10 @@ body {
   /*background-color: white;*/
 }
 
+#main {
+  display: inline-block;
+}
+
 
 #top {
   margin-top: 75px;
@@ -53,7 +57,6 @@ body {
     height: 1px;
     text-align: center;
     display: inline-block;
-
 }
 
 li {
@@ -80,6 +83,8 @@ span:hover {
   height: 1200px;
   width: 1077px;
   float: right;
+  display: inline-block;
+  position: absolute;
  }
 
  #default {
@@ -153,8 +158,6 @@ span:hover {
   width: 80px;
   height: 40px;
 }
-
-
 
  .invisible {
   display: none;
