@@ -1,6 +1,8 @@
 import Snap from 'snapsvg'
 
 window.onload = () => {
-
-  console.log('hitting app')
+       Snap.load('/svg/TimesSquare.svg', (f) => {
+           console.log(f)
+       })
+    
 }
