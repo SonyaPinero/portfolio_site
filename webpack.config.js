@@ -30,8 +30,12 @@ module.exports = [{
         test: /\.html$/,
         exclude: 'node_modules',
         loader: 'markup-inline'
+      },
+      {
+       test: require.resolve('snapsvg'),
+       exclude: 'node_modules',
+       loader: 'imports-loader?this=>window,fix=>module.exports=0'
       }
-
     ]
   },
   plugins: []
@@ -65,6 +69,11 @@ module.exports = [{
         test: /\.html$/,
         exclude: 'node_modules',
         loader: 'markup-inline'
+      },
+      {
+       test: require.resolve('snapsvg'),
+       exclude: 'node_modules',
+       loader: 'imports-loader?this=>window,fix=>module.exports=0'
       }
 
     ]
