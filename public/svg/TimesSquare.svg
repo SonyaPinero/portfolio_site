@@ -18,7 +18,9 @@
 <rect id="linkedinRect" x="454" y="229.2" class="st2" width="62.3" height="93.8"/>
 <line class="st1" x1="470.8" y1="133" x2="470.8" y2="157.2"/>
 <path class="st1" d="M500.5,133c0.2,8.1,0.3,16.1,0.5,24.2"/>
-<rect id="welcomeRect" x="456.5" y="157.2" class="st2" width="56.7" height="53.6"/>
+<g id="welcomeRect">
+<rect x="456.5" y="157.2" class="st2" width="56.7" height="53.6"/>	
+</g>
 <line class="st1" x1="567.5" y1="203.5" x2="567.5" y2="369.2"/>
 <line class="st1" x1="551.5" y1="134.5" x2="578.5" y2="204"/>
 <line class="st1" x1="578.5" y1="204" x2="578.5" y2="293.6"/>
