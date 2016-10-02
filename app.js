@@ -1,8 +1,11 @@
 import Snap from 'snapsvg'
 
 window.onload = () => {
-       Snap.load('/svg/TimesSquare.svg', (f) => {
-           console.log(f)
-       })
+    let times = document.getElementById('TimesSquare');
+    let timesSVG = times.contentDocument.getElementById('timesSVG');
+    
+    let welcomeRect = timesSVG.getElementById('welcomeRect');
+    console.log(welcomeRect)
+
     
 }
