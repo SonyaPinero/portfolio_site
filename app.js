@@ -4,8 +4,4 @@ window.onload = () => {
     let times = document.getElementById('TimesSquare');
     let timesSVG = times.contentDocument.getElementById('timesSVG');
     
-    let welcomeRect = timesSVG.getElementById('welcomeRect');
-    console.log(welcomeRect)
-
-    
 }
