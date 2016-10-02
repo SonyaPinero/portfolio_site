@@ -4,6 +4,6 @@
 	border: 0;
 }
 
-/*#welcomeRect {*/
-/*	fill: red;*/
-/*}*/
+#welcomeText, #linkedInIcon, #githubIcon, #sonyaText, #contactText, #resumeText {
+	visibility: hidden;
+}
