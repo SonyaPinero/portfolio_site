@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<?xml-stylesheet type="text/css" href="../css/index.css" ?>
+<svg version="1.1" id="timesSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 960 560" style="enable-background:new 0 0 960 560;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
 	.st1{fill:#E6E7E8;stroke:#231F20;stroke-linecap:round;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#231F20;stroke-linecap:round;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M23,120c0,0,10.7,0,24,0"/>
 <line class="st1" x1="479.5" y1="21.2" x2="474.1" y2="119.4"/>
 <g id="XMLID_1_">
 	<path class="st2" d="M492,21.8c1.5,33,2.9,65.8,4.3,98.6"/>
@@ -18,9 +18,7 @@
 <rect id="linkedinRect" x="454" y="229.2" class="st2" width="62.3" height="93.8"/>
 <line class="st1" x1="470.8" y1="133" x2="470.8" y2="157.2"/>
 <path class="st1" d="M500.5,133c0.2,8.1,0.3,16.1,0.5,24.2"/>
-<g id="welcomeRect">
-<rect x="456.5" y="157.2" class="st2" width="56.7" height="53.6"/>	
-</g>
+<rect id="welcomeRect" x="456.5" y="157.2" class="st2" width="56.7" height="53.6"/>	
 <line class="st1" x1="567.5" y1="203.5" x2="567.5" y2="369.2"/>
 <line class="st1" x1="551.5" y1="134.5" x2="578.5" y2="204"/>
 <line class="st1" x1="578.5" y1="204" x2="578.5" y2="293.6"/>
