@@ -1,13 +1,15 @@
 window.onload = () => {
+    let index = 0;
     let welcomeArr = 'WELCOMEe'.split('');
-    welcomeArr.forEach((letter) =>{
-        let welcome = document.getElementById('welcome' + letter)
+    
+    let timer = setInterval(() =>{
+        let welcome = document.getElementById('welcome' + welcomeArr[index])
         welcome.style.visibility = 'visible'
-        let tween = KUTE.to(welcome, { fill: '#29B6F6' }, {delay: 500});
-        tween.start()
-    })
-    
-    
-    
-    
+        let tween = KUTE.to(welcome, { fill: '#29B6F6' }).start();
+        index++
+        if (index >= welcomeArr.length) {
+         clearInterval(timer);
+        }
+    }, 250)
+
 }
