@@ -57,6 +57,7 @@ window.onload = () => {
    
    const contactAppears = () =>{
     return new Promise((resolve, reject) => {
+        resumeAppears()
         let index = 0;
         let contactArr = document.getElementById('contactText').getElementsByTagName('path');
         
@@ -74,7 +75,6 @@ window.onload = () => {
    };
    
    const resumeAppears = () =>{
-    return new Promise((resolve, reject) => {
         let index = 0;
         let resumeArr = document.getElementById('resumeText').getElementsByTagName('path');
         
@@ -85,10 +85,8 @@ window.onload = () => {
             index++;
             if (index >= resumeArr.length) {
                 clearInterval(timer);
-                resolve(timer);
             };
         }, 250)  
-    });
    };
    
    (async function() {
@@ -97,7 +95,6 @@ window.onload = () => {
     await sonyaAppears();
     await githubAppears();
     await contactAppears();
-    await resumeAppears();
   })(); 
     
 }
