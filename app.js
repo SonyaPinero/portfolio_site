@@ -50,16 +50,54 @@ window.onload = () => {
     return new Promise((resolve, reject) => {
         let github = document.getElementById('githubIcon').getElementsByTagName('path')[0];
         github.style.visibility = 'visible';
-        let tween = KUTE.to(github, { fill: '#6C3483' }).start();
+        let tween = KUTE.to(github, { fill: '#4A235A' }).start();
         resolve(tween);
     });
    }
+   
+   const contactAppears = () =>{
+    return new Promise((resolve, reject) => {
+        let index = 0;
+        let contactArr = document.getElementById('contactText').getElementsByTagName('path');
+        
+        let timer = setInterval(() =>{
+            let contact = contactArr[index]
+            contact.style.visibility = 'visible';
+            contact.style.fill = '#CB4335'
+            index++;
+            if (index >= contactArr.length) {
+                clearInterval(timer);
+                resolve(timer);
+            };
+        }, 250)  
+    });
+   };
+   
+   const resumeAppears = () =>{
+    return new Promise((resolve, reject) => {
+        let index = 0;
+        let resumeArr = document.getElementById('resumeText').getElementsByTagName('path');
+        
+        let timer = setInterval(() =>{
+            let resume = resumeArr[index]
+            resume.style.visibility = 'visible';
+            resume.style.fill = '#CB4335'
+            index++;
+            if (index >= resumeArr.length) {
+                clearInterval(timer);
+                resolve(timer);
+            };
+        }, 250)  
+    });
+   };
    
    (async function() {
     await welcomeAppears();
     await linkedinAppears();
     await sonyaAppears();
     await githubAppears();
+    await contactAppears();
+    await resumeAppears();
   })(); 
     
 }
