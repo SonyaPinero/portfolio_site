@@ -48,9 +48,9 @@ window.onload = () => {
    
    const githubAppears = () =>{
     return new Promise((resolve, reject) => {
-        let github = document.getElementById('githubIcon')
+        let github = document.getElementById('githubIcon').getElementsByTagName('path')[0];
         github.style.visibility = 'visible';
-        let tween = KUTE.to(github, { fill: 'purple' }).start();
+        let tween = KUTE.to(github, { fill: '#6C3483' }).start();
         resolve(tween);
     });
    }
