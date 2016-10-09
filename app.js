@@ -1,6 +1,13 @@
 window.onload = () => {
-    let welcome = document.getElementById('welcomeW')
-    welcome.style.visibility = 'visible'
-    let tween = KUTE.to('#welcomeW', { fill: 'red' });
-    tween.start()
+    let welcomeArr = 'WELCOMEe'.split('');
+    welcomeArr.forEach((letter) =>{
+        let welcome = document.getElementById('welcome' + letter)
+        welcome.style.visibility = 'visible'
+        let tween = KUTE.to(welcome, { fill: '#29B6F6' }, {delay: 500});
+        tween.start()
+    })
+    
+    
+    
+    
 }
