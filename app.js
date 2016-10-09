@@ -21,7 +21,7 @@ window.onload = () => {
    
    const linkedinAppears = () =>{
     return new Promise((resolve, reject) => {
-        let linkedin = document.getElementById('linkedinIcon')
+        let linkedin = document.getElementById('linkedinIcon').getElementsByTagName('path')[0];
         linkedin.style.visibility = 'visible';
         let tween = KUTE.to(linkedin, { fill: '#0077B5' }).start();
         resolve(tween);
