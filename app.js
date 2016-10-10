@@ -89,12 +89,21 @@ window.onload = () => {
         }, 250)  
    };
    
+   const welcomeBanner = () =>{
+    let welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
+    
+    for (let i = 0; i < welcomeArr.length; i++){
+        let tween = KUTE.to(welcomeArr[i], { translate: 15}).start(); 
+    }
+   }
+   
    (async function() {
     await welcomeAppears();
     await linkedinAppears();
     await sonyaAppears();
     await githubAppears();
     await contactAppears();
+    welcomeBanner()
   })(); 
     
 }
