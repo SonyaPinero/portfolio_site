@@ -90,12 +90,15 @@ window.onload = () => {
    };
    
    const welcomeBanner = () =>{
-    let welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
+       return new Promise((resolve, reject) => {
+        let welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
     
-    for (let i = 0; i < welcomeArr.length; i++){
-        let tween = KUTE.to(welcomeArr[i], { translate: 15}).start(); 
-    }
-   }
+        for (let i = 0; i < welcomeArr.length; i++){
+            let tween = KUTE.to(welcomeArr[i], { translate: 15}).start();
+            resolve()
+        };
+       });
+   };
    
    (async function() {
     await welcomeAppears();
@@ -103,7 +106,7 @@ window.onload = () => {
     await sonyaAppears();
     await githubAppears();
     await contactAppears();
-    welcomeBanner()
+    await welcomeBanner();
   })(); 
     
 }
