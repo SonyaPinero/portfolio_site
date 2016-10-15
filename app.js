@@ -97,33 +97,39 @@ window.onload = () => {
         let tween = KUTE.to(letters, { translate: 60}, {duration: 2500}).start();
    };
    
+   
    const welcomeBanner = () =>{
        return new Promise((resolve, reject) => {
         let  welcome = document.getElementById('welcomeText'); 
         let  welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
         let index = welcomeArr.length - 1;
+        let seconds = 50;
         
         welcomeBannerMoves(welcome);
-        let timer = setInterval(() =>{
-                letterDisappears(welcomeArr[index]);
+        const letterTime = () => {
+            seconds = seconds + 65;
+            letterDisappears(welcomeArr[index]);
             index--;
-            if (index < 0) {
-                clearInterval(timer);
+            let timer = setTimeout(letterTime, seconds);
+            if (index < 0){
+                clearTimeout(timer)
                 resolve(timer)
-            };
-        }, 150) 
- 
-       });
+            }
+        }
+
+        setTimeout(letterTime, seconds);
+        
+       })
    };
    
 
    
    (async function() {
     await welcomeAppears();
-    await linkedinAppears();
-    await sonyaAppears();
-    await githubAppears();
-    await contactAppears();
+    // await linkedinAppears();
+    // await sonyaAppears();
+    // await githubAppears();
+    // await contactAppears();
     await welcomeBanner();
   })(); 
     
