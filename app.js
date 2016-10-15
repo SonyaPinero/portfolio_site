@@ -42,7 +42,7 @@ window.onload = () => {
                 clearInterval(timer);
                 resolve(timer);
             };
-        }, 150)  
+        }, 125)  
     });
    };
    
@@ -116,20 +116,45 @@ window.onload = () => {
                 resolve(timer)
             }
         }
-
         setTimeout(letterTime, seconds);
-        
        })
    };
    
+   
+   const lightUp = (el) => {
+        let  element = document.getElementById(el); 
+        element.style.stroke = 'gold';
+        element.setAttribute('stroke-width', 3);
+        element.setAttribute('stroke-opacity', 0.4);
+        if (el === 'contactRect'){
+            lightUp('resumeRect')
+        }
+   }
+   
+   const lightUpTheSquare = () =>{
+       return new Promise((reject, resolve) =>{ 
+        let rectArr = ['welcomeRect', 'linkedinRect', 'sonyaRect','githubRect','contactRect'];
+        let index = 0;
+        
+        let timer = setInterval(() =>{
+            lightUp(rectArr[index]);
+            index++;
+            if (index >= rectArr.length) {
+                clearInterval(timer);
+                resolve(timer)
+            };
+        }, 250);
+      })
+   };
 
    
    (async function() {
     await welcomeAppears();
-    // await linkedinAppears();
-    // await sonyaAppears();
-    // await githubAppears();
-    // await contactAppears();
+    await linkedinAppears();
+    await sonyaAppears();
+    await githubAppears();
+    await contactAppears();
+    await lightUpTheSquare();
     await welcomeBanner();
   })(); 
     
