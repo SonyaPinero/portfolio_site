@@ -8,7 +8,7 @@ window.onload = () => {
         let timer = setInterval(() =>{
             let welcome = welcomeArr[index]
             welcome.style.visibility = 'visible';
-            welcome.style.fill = '#29B6F6'
+            welcome.style.fill =  '#29B6F6'
             index++;
             if (index >= welcomeArr.length) {
                 clearInterval(timer);
@@ -36,13 +36,13 @@ window.onload = () => {
         let timer = setInterval(() =>{
             let sonya = sonyaArr[index]
             sonya.style.visibility = 'visible';
-            sonya.style.fill = '#CD5C5C'
+            sonya.style.fill = '#DB7093'
             index++;
             if (index >= sonyaArr.length) {
                 clearInterval(timer);
                 resolve(timer);
             };
-        }, 250)  
+        }, 150)  
     });
    };
    
@@ -89,16 +89,34 @@ window.onload = () => {
         }, 250)  
    };
    
+    const letterDisappears = (letter) =>{
+         letter.style.visibility = 'hidden';
+   };
+   
+   const welcomeBannerMoves = (letters) =>{
+        let tween = KUTE.to(letters, { translate: 60}, {duration: 2500}).start();
+   };
+   
    const welcomeBanner = () =>{
        return new Promise((resolve, reject) => {
-        let welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
-    
-        for (let i = 0; i < welcomeArr.length; i++){
-            let tween = KUTE.to(welcomeArr[i], { translate: 15}).start();
-            resolve()
-        };
+        let  welcome = document.getElementById('welcomeText'); 
+        let  welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
+        let index = welcomeArr.length - 1;
+        
+        welcomeBannerMoves(welcome);
+        let timer = setInterval(() =>{
+                letterDisappears(welcomeArr[index]);
+            index--;
+            if (index < 0) {
+                clearInterval(timer);
+                resolve(timer)
+            };
+        }, 150) 
+ 
        });
    };
+   
+
    
    (async function() {
     await welcomeAppears();
