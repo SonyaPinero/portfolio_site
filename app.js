@@ -132,16 +132,16 @@ window.onload = () => {
    }
    
    const lightUpTheSquare = () =>{
-       return new Promise((reject, resolve) =>{ 
-        let rectArr = ['welcomeRect', 'linkedinRect', 'sonyaRect','githubRect','contactRect'];
+       return new Promise((resolve, reject) =>{ 
         let index = 0;
-        
+        let rectArr = ['welcomeRect', 'linkedinRect', 'sonyaRect','githubRect','contactRect'];
+    
         let timer = setInterval(() =>{
             lightUp(rectArr[index]);
             index++;
             if (index >= rectArr.length) {
                 clearInterval(timer);
-                resolve(timer)
+                resolve(timer);
             };
         }, 250);
       })
