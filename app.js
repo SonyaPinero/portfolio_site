@@ -146,7 +146,58 @@ window.onload = () => {
         }, 250);
       })
    };
-
+   
+   const contactBannerMoves = (letters) =>{
+        let tween = KUTE.to(letters, { translate: [0, 115]}, {duration: 2500}).start();
+   };
+   
+   const resumeBannerMoves = (letters) =>{
+        let tween = KUTE.to(letters, { translate: [0, -110]}, {duration: 2500}).start();
+   };
+   
+    const contactBanner = () =>{
+        return new Promise((resolve, reject) =>{
+            let contact = document.getElementById('contactText'); 
+            let contactArr = document.getElementById('contactText').getElementsByTagName('path');
+            let index = contactArr.length - 1;
+            let seconds = 50; 
+            
+            contactBannerMoves(contact);
+            const letterTime = () => {
+            seconds = seconds + 80;
+            letterDisappears(contactArr[index]);
+            index--;
+            let timer = setTimeout(letterTime, seconds);
+            if (index < 0){
+                clearTimeout(timer)
+                resolve(timer)
+            }
+        }
+            setTimeout(letterTime, seconds);
+        })
+   }
+    
+    const resumeBanner = () =>{
+        return new Promise((resolve, reject) =>{
+            let resume = document.getElementById('resumeText'); 
+            let resumeArr = document.getElementById('resumeText').getElementsByTagName('path');
+            let index = 0;
+            let seconds = 50; 
+            
+            resumeBannerMoves(resume);
+            const letterTime = () => {
+            seconds = seconds + 120;
+            letterDisappears(resumeArr[index]);
+            index++;
+            let timer = setTimeout(letterTime, seconds);
+            if (index >= resumeArr.length){
+                clearTimeout(timer)
+                resolve(timer)
+            }
+        }
+            setTimeout(letterTime, seconds);
+        })
+    }
    
    (async function() {
     await welcomeAppears();
@@ -156,6 +207,8 @@ window.onload = () => {
     await contactAppears();
     await lightUpTheSquare();
     await welcomeBanner();
+    await contactBanner();
+    await resumeBanner();
   })(); 
     
 }
