@@ -93,10 +93,40 @@ window.onload = () => {
          letter.style.visibility = 'hidden';
    };
    
+   const letterAppears = (letter) =>{
+         letter.style.visibility = 'visible';
+   };
+   
    const welcomeBannerMoves = (letters) =>{
         let tween = KUTE.to(letters, { translate: 60}, {duration: 2500}).start();
    };
    
+   const welcomeBannerResets = (letter) =>{
+        let tween = KUTE.to(letter, { translate: [0, -10]}, {duration: 1000}).start();
+        tween = KUTE.to(letter, { translate: -90}, {duration: 1000}).start();
+   };
+   
+   const welcomeBannerReturns = () =>{
+        return new Promise((resolve, reject) => {
+        let  welcome = document.getElementById('welcomeText'); 
+        let  welcomeArr = document.getElementById('welcomeText').getElementsByTagName('path'); 
+        let index = welcomeArr.length - 1;
+        let seconds = 275;
+        
+        let tween = KUTE.to(welcome, { translate: 90}, {duration: 2500}).start();
+        const letterTime = () => {
+            seconds = seconds + 40;
+            letterAppears(welcomeArr[index]);
+            index--;
+            let timer = setTimeout(letterTime, seconds);
+            if (index < 0){
+                clearTimeout(timer)
+                resolve(timer)
+            }
+        }
+        setTimeout(letterTime, seconds);
+       })
+   };
    
    const welcomeBanner = () =>{
        return new Promise((resolve, reject) => {
@@ -108,7 +138,8 @@ window.onload = () => {
         welcomeBannerMoves(welcome);
         const letterTime = () => {
             seconds = seconds + 65;
-            letterDisappears(welcomeArr[index]);
+            letterDisappears(welcomeArr[index]); 
+            welcomeBannerResets(welcomeArr[index]);
             index--;
             let timer = setTimeout(letterTime, seconds);
             if (index < 0){
@@ -201,14 +232,15 @@ window.onload = () => {
    
    (async function() {
     await welcomeAppears();
-    await linkedinAppears();
-    await sonyaAppears();
-    await githubAppears();
-    await contactAppears();
-    await lightUpTheSquare();
+    // await linkedinAppears();
+    // await sonyaAppears();
+    // await githubAppears();
+    // await contactAppears();
+    // await lightUpTheSquare();
     await welcomeBanner();
-    await contactBanner();
-    await resumeBanner();
+    await welcomeBannerReturns();
+    // await contactBanner();
+    // await resumeBanner();
   })(); 
     
 }
