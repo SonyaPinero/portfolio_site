@@ -182,9 +182,33 @@ window.onload = () => {
         let tween = KUTE.to(letters, { translate: [0, 115]}, {duration: 2500}).start();
    };
    
-   const resumeBannerMoves = (letters) =>{
-        let tween = KUTE.to(letters, { translate: [0, -110]}, {duration: 2500}).start();
+   const contactBannerResets = (letter) =>{
+        let tween = KUTE.to(letter, { translate: [0, -10]}, {duration: 1000}).start();
+        tween = KUTE.to(letter, { translate: [0, -205]}, {duration: 1000}).start();
    };
+   
+  
+  const contactBannerReturns = () =>{
+        return new Promise((resolve, reject) => {
+        let  contact = document.getElementById('contactText'); 
+        let  contactArr = document.getElementById('contactText').getElementsByTagName('path'); 
+        let index = contactArr.length - 1;
+        let seconds = 285;
+        
+        let tween = KUTE.to(contact, { translate: [0, 205]}, {duration: 2500}).start();
+        const letterTime = () => {
+            seconds = seconds + 40;
+            letterAppears(contactArr[index]);
+            index--;
+            let timer = setTimeout(letterTime, seconds);
+            if (index < 0){
+                clearTimeout(timer)
+                resolve(timer)
+            }
+        }
+        setTimeout(letterTime, seconds);
+      })
+  };
    
     const contactBanner = () =>{
         return new Promise((resolve, reject) =>{
@@ -197,6 +221,7 @@ window.onload = () => {
             const letterTime = () => {
             seconds = seconds + 80;
             letterDisappears(contactArr[index]);
+            contactBannerResets(contactArr[index]);
             index--;
             let timer = setTimeout(letterTime, seconds);
             if (index < 0){
@@ -207,6 +232,11 @@ window.onload = () => {
             setTimeout(letterTime, seconds);
         })
    }
+   
+    const resumeBannerMoves = (letters) =>{
+        let tween = KUTE.to(letters, { translate: [0, -110]}, {duration: 2500}).start();
+   };
+   
     
     const resumeBanner = () =>{
         return new Promise((resolve, reject) =>{
@@ -229,18 +259,21 @@ window.onload = () => {
             setTimeout(letterTime, seconds);
         })
     }
+    
+    
    
    (async function() {
-    await welcomeAppears();
-    // await linkedinAppears();
-    // await sonyaAppears();
-    // await githubAppears();
-    // await contactAppears();
-    // await lightUpTheSquare();
-    await welcomeBanner();
-    await welcomeBannerReturns();
-    // await contactBanner();
-    // await resumeBanner();
+    //await welcomeAppears();
+    //await linkedinAppears();
+    //await sonyaAppears();
+    //await githubAppears();
+    await contactAppears();
+    //await lightUpTheSquare();
+    //await welcomeBanner();
+   // await welcomeBannerReturns();
+    await contactBanner();
+    await contactBannerReturns();
+    //await resumeBanner();
   })(); 
     
 }
