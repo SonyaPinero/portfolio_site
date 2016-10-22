@@ -237,7 +237,33 @@ window.onload = () => {
         let tween = KUTE.to(letters, { translate: [0, -110]}, {duration: 2500}).start();
    };
    
-    
+   const resumeBannerResets = (letter) =>{
+        let tween = KUTE.to(letter, { translate: [0, -10]}, {duration: 1000}).start();
+        tween = KUTE.to(letter, { translate: [0, 195]}, {duration: 1000}).start();
+   };
+   
+  const resumeBannerReturns = () =>{
+        return new Promise((resolve, reject) => {
+        let  resume = document.getElementById('resumeText'); 
+        let  resumeArr = document.getElementById('resumeText').getElementsByTagName('path'); 
+        let index = 0;
+        let seconds = 320;
+        
+        let tween = KUTE.to(resume, { translate: [0, -195]}, {duration: 2500}).start();
+        const letterTime = () => {
+            seconds = seconds + 40;
+            letterAppears(resumeArr[index]);
+            index++;
+            let timer = setTimeout(letterTime, seconds);
+            if (index < 0){
+                clearTimeout(timer)
+                resolve(timer)
+            }
+        }
+        setTimeout(letterTime, seconds);
+      })
+  };
+   
     const resumeBanner = () =>{
         return new Promise((resolve, reject) =>{
             let resume = document.getElementById('resumeText'); 
@@ -249,6 +275,7 @@ window.onload = () => {
             const letterTime = () => {
             seconds = seconds + 120;
             letterDisappears(resumeArr[index]);
+            resumeBannerResets(resumeArr[index]);
             index++;
             let timer = setTimeout(letterTime, seconds);
             if (index >= resumeArr.length){
@@ -263,17 +290,18 @@ window.onload = () => {
     
    
    (async function() {
-    //await welcomeAppears();
-    //await linkedinAppears();
-    //await sonyaAppears();
-    //await githubAppears();
+    await welcomeAppears();
+    await linkedinAppears();
+    await sonyaAppears();
+    await githubAppears();
     await contactAppears();
-    //await lightUpTheSquare();
-    //await welcomeBanner();
-   // await welcomeBannerReturns();
+    await lightUpTheSquare();
+    await welcomeBanner();
+    await welcomeBannerReturns();
     await contactBanner();
     await contactBannerReturns();
-    //await resumeBanner();
+    await resumeBanner();
+    await resumeBannerReturns();
   })(); 
     
 }
