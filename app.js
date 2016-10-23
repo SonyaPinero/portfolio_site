@@ -1,4 +1,4 @@
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', (ev) => {
     
    const welcomeAppears = () => {
     return new Promise((resolve, reject) => {
@@ -255,7 +255,7 @@ window.onload = () => {
             letterAppears(resumeArr[index]);
             index++;
             let timer = setTimeout(letterTime, seconds);
-            if (index < 0){
+            if (index >= resumeArr.length){
                 clearTimeout(timer)
                 resolve(timer)
             }
@@ -288,20 +288,30 @@ window.onload = () => {
     }
     
     
-   
+    let contactText = document.getElementById('contactText');
+    let contactModal = document.getElementById('myModal');
+    contactText.addEventListener('click', (e) => {
+        $('#contactModal').modal()
+    });
+    
+    let resumeText = document.getElementById('resumeText');
+    resumeText.addEventListener('click', (e) => {
+         $('#resumeModal').modal()
+    });
+    
    (async function() {
-    await welcomeAppears();
-    await linkedinAppears();
-    await sonyaAppears();
-    await githubAppears();
+    // await welcomeAppears();
+    // await linkedinAppears();
+    // await sonyaAppears();
+    // await githubAppears();
     await contactAppears();
-    await lightUpTheSquare();
-    await welcomeBanner();
-    await welcomeBannerReturns();
+    // await lightUpTheSquare();
+    // await welcomeBanner();
+    // await welcomeBannerReturns();
     await contactBanner();
     await contactBannerReturns();
-    await resumeBanner();
-    await resumeBannerReturns();
+    // await resumeBanner();
+    // await resumeBannerReturns();
   })(); 
     
-}
+})
