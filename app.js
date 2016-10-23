@@ -299,19 +299,21 @@ document.addEventListener('DOMContentLoaded', (ev) => {
          $('#resumeModal').modal()
     });
     
+    $("#pdf embed").attr("src","./misc/SonyaPineroWebDeveloperResume.pdf");
+    
    (async function() {
-    // await welcomeAppears();
-    // await linkedinAppears();
-    // await sonyaAppears();
-    // await githubAppears();
+    await welcomeAppears();
+    await linkedinAppears();
+    await sonyaAppears();
+    await githubAppears();
     await contactAppears();
-    // await lightUpTheSquare();
-    // await welcomeBanner();
-    // await welcomeBannerReturns();
+    await lightUpTheSquare();
+    await welcomeBanner();
+    await welcomeBannerReturns();
     await contactBanner();
     await contactBannerReturns();
-    // await resumeBanner();
-    // await resumeBannerReturns();
+    await resumeBanner();
+    await resumeBannerReturns();
   })(); 
     
 })
