@@ -1,4 +1,4 @@
-##Practicing animations
+##Practicing animations: sonyapinero.com
 
 **Tools used:**
 - Kute.js (for the banners)
@@ -7,4 +7,4 @@
 **Needs improvement:**
 - Alternative to setInterval and setTimeout for running animations
 - Randomize animations continuously
-- replace cdnjs links with node modules or download them
+- Replace cdnjs links with node modules or download them
