@@ -3,6 +3,7 @@
 **Tools used:**
 - Kute.js (for the banners)
 - Bootstrap (for the modals)
+- Webpack to build the es6 files and host them on s3
 
 **Needs improvement:**
 - Alternative to setInterval and setTimeout for running animations
