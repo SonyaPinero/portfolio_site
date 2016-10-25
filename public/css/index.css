@@ -1,0 +1,60 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#welcomeText, #linkedInIcon, #githubIcon, #sonyaText, #contactText, #resumeText {
+	visibility: hidden;
+}
+
+#container{
+	height: 100%;
+	width: 100%;
+}
+
+#contactDialog{
+	height: 200px;
+	width: 400px;
+	margin-top: 325px;
+	margin-left: 100px;
+}
+
+#resumeDialog{
+	height: 100%;
+	width: 750px;
+	margin-left: -75px;
+}
+
+#resumeDialog #bodyModal{
+	margin-top: 0px;
+	height: 100%;
+}
+
+#bodyModal{
+	margin-top: 50px;
+	text-align: center;
+	font-size: 25px;
+}
+
+#modalDialog{
+	display: block;
+	text-align: center;
+}
+ 
+ @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px)
+  and (orientation : landscape){ 
+  	#bodyModal{
+		margin-top: 10px;
+		text-align: center;
+		font-size: 15px;
+	}
+	#contactDialog{
+		height: 100px;
+		width: 500px;
+		margin-top: 250px;
+		margin-left: 50px;
+	}
+}

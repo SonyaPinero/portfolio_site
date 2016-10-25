@@ -1,1 +1,11 @@
-My simple and quick attempt at an one page site with pure jQuery and a liberal dosage of display:none. 
+##Practicing animations: sonyapinero.com
+
+**Tools used:**
+- Kute.js (for the banners)
+- Bootstrap (for the modals)
+- Webpack to build the es6 files and host them on s3
+
+**Needs improvement:**
+- Alternative to setInterval and setTimeout for running animations
+- Randomize animations continuously
+- Replace cdnjs links with node modules or download them
